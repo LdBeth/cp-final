@@ -1,0 +1,9 @@
+[submodule "pursrc/dependencies/purescript-prelude"]
+	path = pursrc/dependencies/purescript-prelude
+	url = git@github.com:purescript/purescript-prelude.git
+[submodule "pursrc/dependencies/purescript-console"]
+	path = pursrc/dependencies/purescript-console
+	url = git@github.com:purescript/purescript-console.git
+[submodule "pursrc/dependencies/purescript-effect"]
+	path = pursrc/dependencies/purescript-effect
+	url = git@github.com:purescript/purescript-effect.git
