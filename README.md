@@ -35,11 +35,11 @@ A conceptual computer emulator inspired by FORTH, and COSMAC ELF.
 
 ## Challenges
 
-A brief discussion of what was hard, challenging, or unexpected about your project.
+TODO
 
 ## Timeline
 
-What did you do in each of the past four weeks?
+TODO
 
 - Week 1: Write proposal
 - Week 2: 
@@ -48,7 +48,7 @@ What did you do in each of the past four weeks?
 
 ## Completed Work
 
-Photos and videos of your completed final project!
+TODO
 
 ## References and links
 
