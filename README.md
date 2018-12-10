@@ -39,11 +39,9 @@ TODO
 
 ## Timeline
 
-TODO
-
 - Week 1: Write proposal
-- Week 2: 
-- Week 3: 
+- Week 2: CPU Spec
+- Week 3: GUI
 - Week 4: Present!
 
 ## Completed Work

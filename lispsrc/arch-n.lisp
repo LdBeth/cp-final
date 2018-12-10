@@ -4,8 +4,7 @@
 ;; Like forth, there's a data stack.
 (defvar *data-stack* '())
 ;; With a liner memory for store program and data.
-(defvar *main-memery*     (make-array 510))
-(defvar *dma*        (make-array 510)) ;; 30 x 15 display
+(defvar *memery* (make-array 510))
 (defvar *interp* false)
 
 (defvar *p* 0) ;; Program counter
@@ -18,8 +17,9 @@
 
 (defvar *state* 0) ;; 0 -> rest; 1 -> load; 3 -> run; 4 -> idle
 
-(defun run ()
-  (setq *state* 3))
+(defun clean-mem ()
+  (loop for i from 0 to 509
+        do (setf (aref *memery* i) 0)))
 
 (defun run-next ()
   (when (= *state* 3)
@@ -34,11 +34,6 @@
 
 (define-symbol-macro *head*
   (aref *data-stack* 0))
-
-(define-symbol-macro *memery*
-    (if *interp*
-        *dma*
-        *main-memery*))
 
 (defun execute (code)
   (case code
@@ -56,8 +51,12 @@
     (#xb (nega))
     (#xc (mult))
     (#xd (dvid))
-    (#xe (dmat)))
+    )
   undefined)
+
+(defun n-input (n)
+  (setf (aref *memery* *p*) n)
+  (incf *p*))
 
 (defun idle ()
   (setq *state* 4))
@@ -107,7 +106,3 @@
 (defun divd ()
   (setf *head* (floor (spop) *head*)))
 
-(defun dmat ()
-  (if *interp*
-      (setq *interp* false)
-      (setq *interp* true)))

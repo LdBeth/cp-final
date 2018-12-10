@@ -1,15 +1,16 @@
 /* Generated from Parenscript. */
 var DATASTACK = [];
-var MAINMEMERY = new Array(510);
-var DMA = new Array(510);
+var MEMERY = new Array(510);
 var INTERP = false;
 var P = 0;
 var POINTER = 0;
 var OFFSET = 0;
 var Q = 0;
 var STATE = 0;
-function run() {
-    return STATE = 3;
+function cleanMem() {
+    for (var i = 0; i <= 509; i += 1) {
+        MEMERY[i] = 0;
+    };
 };
 function runNext() {
     if (STATE === 3) {
@@ -66,26 +67,27 @@ function execute(code) {
         break;
     case 13:
         dvid();
-        break;
-    case 14:
-        dmat();
     };
     return undefined;
+};
+function nInput(n) {
+    MEMERY[P] = n;
+    return ++P;
 };
 function idle() {
     return STATE = 4;
 };
 function load() {
-    return DATASTACK.unshift(256 * (INTERP ? DMA : MAINMEMERY)[2 * POINTER] + (INTERP ? DMA : MAINMEMERY)[2 * POINTER + 1]);
+    return DATASTACK.unshift(256 * MEMERY[2 * POINTER] + MEMERY[2 * POINTER + 1]);
 };
 function save() {
     var n = (spop() % 65535 + 65535) % 65535;
-    (INTERP ? DMA : MAINMEMERY)[2 * POINTER] = 65280 & n;
-    return (INTERP ? DMA : MAINMEMERY)[2 * POINTER + 1] = 255 & n;
+    MEMERY[2 * POINTER] = 65280 & n;
+    return MEMERY[2 * POINTER + 1] = 255 & n;
 };
 function setp() {
     ++P;
-    return POINTER = (INTERP ? DMA : MAINMEMERY)[P];
+    return POINTER = MEMERY[P];
 };
 function goto() {
     return P = dist();
@@ -116,7 +118,4 @@ function mult() {
 };
 function divd() {
     return DATASTACK[0] = Math.floor(spop() / DATASTACK[0]);
-};
-function dmat() {
-    return INTERP ? (INTERP = false) : (INTERP = true);
 };
