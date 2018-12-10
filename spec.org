@@ -1,0 +1,31 @@
+* A simple computer emulator
+** COSMAC ELF style
+- programming with a switch panel/hex keyboard
+- Very small instruction set, no more than 20.
+- Has a main memory as a array, a separated display memory, a data stack.
+- Produce pixel graphic output via a direct memory access style instruction.
+- Produce sound via setting a register controls frequency
+- A hex number display
+** An assembler script
+- Produce json/hex output
+- Provide a cheat interface for quick load program
+** A hex number helper
+** A few demo programs
+- calculate Fibonacci 6
+- make some noise
+- draw some text
+- random mini game
+
+* Machine layout
+a data stack, a return stack. A P counter, a sound register, a vedio ram,
+and a hex display stack, a GOTO register
+
+* Instruction format
+ 1 byte for all ops
+ 00 follows a type and data is push data into stack
+* Instruction set
+- integer arith: plus, minus, times, divide ( n n - n )
+- save (n addr - effect) load (addr - effect n) while addr = beg len
+- goto ( G - effect ), br0: if stack top 0 then goto ( G - 
+- pop ( n - )
+
