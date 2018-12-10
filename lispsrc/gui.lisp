@@ -41,7 +41,7 @@
                (-string n)
                (aref *char-array* (- n 10))))
          (defun make-hex ()
-           (+ (to-hex (logand #xf0 hex-disp))
+           (+ (to-hex (/ (logand #xf0 hex-disp) 16))
               (to-hex (logand #x0f hex-disp))))
 
          (defun make-byte ()

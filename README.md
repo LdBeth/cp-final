@@ -35,7 +35,9 @@ A conceptual computer emulator inspired by FORTH, and COSMAC ELF.
 
 ## Challenges
 
-TODO
+As DEK says, u'll never expect what problems to have before actually working.
+It's hard to debug an ad hoc language, espically a lowlevel one.
+Also it's not easy to make a wise dicesion on instruction set.
 
 ## Timeline
 
@@ -46,7 +48,12 @@ TODO
 
 ## Completed Work
 
-TODO
+Press number 1-8 as switchs.
+Press `l` to load mode.
+In load mode, press `i` to key in program.
+Press `r` to run.
+Press `s` to stop.
+Press `c` to reset.
 
 ## References and links
 

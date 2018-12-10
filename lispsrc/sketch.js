@@ -4,7 +4,7 @@ function toHex(n) {
     return n < 10 ? String(n) : CHARARRAY[n - 10];
 };
 function makeHex() {
-    return toHex(240 & hexDisp) + toHex(15 & hexDisp);
+    return toHex((240 & hexDisp) / 16) + toHex(15 & hexDisp);
 };
 function makeByte() {
     return (function () {
