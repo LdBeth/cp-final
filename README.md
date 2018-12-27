@@ -6,9 +6,9 @@ A conceptual computer emulator inspired by FORTH, and COSMAC ELF.
 
 - programming with a switch panel/hex keyboard 
 - Very small instruction set, no more than 20.
-- Has a main memory as a array, a separated display memory, a data stack.
-- Produce pixel graphic output via a direct memory access style instruction.
-- Produce sound via setting a register controls frequency
+- Has a main memory as a array, <s>a separated display memory,</s> a data stack.
+- <s>Produce pixel graphic output via a direct memory access style instruction.</s>
+- <s>Produce sound via setting a register controls frequency.</s>
 - A hex number display
 
 ## Component Parts
